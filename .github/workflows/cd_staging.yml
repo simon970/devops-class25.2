@@ -14,7 +14,7 @@ jobs:
            touch /home/runner/.ssh/known_hosts
            echo "${{secrets.KNWON_HOSTS}}" &> /home/runner/.ssh/known_hosts
            chmod 700 ~/ssh_key
-           ssh -i ~/ssh_key root@64.23.156.135
+           ssh -i ~/ssh_key -o StrictHostKeyChecking=no root@64.23.156.135
            cd devops-class25.2/ && git pull 
            pnpm install
            pnpm run build
