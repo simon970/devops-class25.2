@@ -12,7 +12,7 @@ jobs:
            mkdir -p /home/runner/.ssh
            ls /home/runner/.ssh
            touch /home/runner/.ssh/known_hosts
-           echo "${{secrets.KNOWN_SECRETS}}" &> /home/runner/.ssh/known_hosts
+           echo "${{secrets.KNOWN_SECRETS}}" > /home/runner/.ssh/known_hosts
            chmod 700 /home/runner/ssh_key
            ssh -i ~/ssh_key -o StrictHostKeyChecking=no root@64.23.156.135
            cd devops-class25.2/ && git pull 
