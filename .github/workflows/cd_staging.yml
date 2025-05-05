@@ -9,6 +9,7 @@ jobs:
      steps:
        - run: |
            echo "${{secrets.SSH_PRIVATE_KEY}}" &> ~/ssh_key
+           echo "${{secrets.SSH_KNOWN_HOSTS}}" &> ~/.ssh/known_hosts
            ssh -i ~/ssh_key root@64.23.156.135
            cd devops-class25.2/ && git pull
            pnpm install
