@@ -4,8 +4,8 @@ on:
     branches: [ main ]
 jobs:
   redeploy_everything:
+     runs-on: ubuntu-latest
      name: Deploying everything to the staging cluster
-
      steps:
        - run: |
            echo ${{secrets.SSH_PRIVATE_KEY}} &> ~/ssh_key
